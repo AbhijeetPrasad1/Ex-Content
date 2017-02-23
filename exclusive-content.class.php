@@ -3,7 +3,7 @@
 class Ex_Content {
 
 	function __construct() {
-		add_shortcode( 'hide', array( $this, 'shortcode' ));
+		add_shortcode( 'exclusive', array( $this, 'shortcode' ));
 	}
 
 	// implements the shortcode replacement
@@ -15,7 +15,7 @@ class Ex_Content {
 			if ($replacementText) {
 				return  implode( '', $replacementText);
 			} else {
-				return '<p> ERROR PLEASE CHECK OPTION </p>'; // TEMP REPLACEMENT -> switch with some kind of base message or error message
+				return '<p> ERROR PLEASE CHECK OPTION </p>'; // TEMP REPLACEMENT -> switch with some kind of base html or error message
 			}
 		}
 	}
@@ -30,5 +30,3 @@ function debug_to_console( $data ) {
 
     echo $output;
 }
-
-//'<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg"> <br/> <p> hello </p>';
