@@ -19,11 +19,11 @@
  * Version: 1.0.0
  */
 
-// Load Hide This class
+// Load the class that process shortcode
 require( dirname( __FILE__ ) . '/exclusive-content.class.php' );
-// Load Hide This Loader class
+// Load the class that loads the shortcode
 require( dirname( __FILE__ ) . '/exclusive-content-loader.class.php' );
-
+// Load the class that creates settings page
 require( dirname( __FILE__) . '/exclusive-content-settings.php' );
 
 new Ex_Content_Loader;
