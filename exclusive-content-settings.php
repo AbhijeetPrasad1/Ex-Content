@@ -1,18 +1,18 @@
 <?php
 
-add_action( 'admin_menu', 'ex_content_add_admin_menu' );
+// adds settings to menu
+add_action( 'admin_menu', 'ex_content_add_settings_menu' );
 add_action( 'admin_init', 'ex_content_settings_init' );
 
 
-function ex_content_add_admin_menu(  ) { 
+function ex_content_add_settings_menu(  ) { 
 
-	add_submenu_page('options-general.php', 'exclusive-content', 'exclusive-content', 'manage_options', 'exclusive-content', 'ex_content_options_page');
+	add_submenu_page('options-general.php', 'Exclusive Content', 'Exclusive Content', 'manage_options', 'exclusive-content', 'ex_content_options_page');
 
 }
 
-
+// Populates fields in settings page
 function ex_content_settings_init(  ) { 
-
 	register_setting( 'ex_content_op', 'ex_content_settings' );
 
 	add_settings_section(
@@ -30,21 +30,20 @@ function ex_content_settings_init(  ) {
 		'ex_content_section' 
 	);
 
-function render_replacement_text_field() {
-	$options = get_option( 'ex_content_settings' );
-	?>
-	<input type='text' size="50" name='ex_content_settings[ex_content_text_field]' value='<?php echo $options['ex_content_text_field']; ?>'>
-	<?php
-}
+	function render_replacement_text_field() {
+		$options = get_option( 'ex_content_settings' );
+		?>
+		<input type='text' size="50" name='ex_content_settings[ex_content_text_field]' value='<?php echo $options['ex_content_text_field']; ?>'>
+		<?php
+	}
 
 }
 
 function ex_content_settings_section_callback(  ) { 
-
 	echo __( 'Enter the html that will be replaced', 'wordpress' );
-
 }
 
+// Populates the pages with the titles and various settings
 function ex_content_options_page(  ) { 
 
 	?>

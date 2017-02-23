@@ -3,21 +3,19 @@
 class Ex_Content {
 
 	function __construct() {
-		// Main shortcode.
 		add_shortcode( 'hide', array( $this, 'shortcode' ));
-
-		//Ex_Content_Loader::setup();
 	}
 
+	// implements the shortcode replacement
 	function shortcode($atts, $content) {
 		$replacementText = get_option('ex_content_settings');
 		if(is_user_logged_in()) {
 			return $content;
 		} else {
-			if (!$replacementText) {
-				return '<p> ERROR PLEASE CHECK OPTION </p>';
-			} else {
+			if ($replacementText) {
 				return  implode( '', $replacementText);
+			} else {
+				return '<p> ERROR PLEASE CHECK OPTION </p>'; // TEMP REPLACEMENT -> switch with some kind of base message or error message
 			}
 		}
 	}
