@@ -1,4 +1,5 @@
 <?php
+
 add_action( 'admin_menu', 'ex_content_add_admin_menu' );
 add_action( 'admin_init', 'ex_content_settings_init' );
 

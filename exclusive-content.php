@@ -1,7 +1,5 @@
 <?php
 /**
- * Hide This
- *
  * This plugin provides a shortcode that lets you hide some parts of the content
  * from your posts and pages.
  *
@@ -21,9 +19,7 @@
 
 // Load the class that process shortcode
 require( dirname( __FILE__ ) . '/exclusive-content.class.php' );
-// Load the class that loads the shortcode
-require( dirname( __FILE__ ) . '/exclusive-content-loader.class.php' );
 // Load the class that creates settings page
 require( dirname( __FILE__) . '/exclusive-content-settings.php' );
 
-new Ex_Content_Loader;
+new Ex_Content;
