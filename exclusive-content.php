@@ -24,4 +24,6 @@ require( dirname( __FILE__ ) . '/exclusive-content.class.php' );
 // Load Hide This Loader class
 require( dirname( __FILE__ ) . '/exclusive-content-loader.class.php' );
 
+require( dirname( __FILE__) . '/exclusive-content-settings.php' );
+
 new Ex_Content_Loader;
